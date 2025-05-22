@@ -24,3 +24,7 @@ async def predict(file: UploadFile = File(...)):
     predicted_class = CLASS_NAMES[np.argmax(prediction)]
     confidence = float(np.max(prediction))
     return JSONResponse({"class": predicted_class, "confidence": confidence})
+
+@app.get("/")
+def read_root():
+    return {"message": "Seed classification API is running successfully!"}
