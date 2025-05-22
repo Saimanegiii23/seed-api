@@ -8,7 +8,7 @@ import io
 app = FastAPI()
 
 model = tf.keras.models.load_model("seed_classifier.h5")
-CLASS_NAMES = ['Chickpea', 'Kidney Bean', 'Maize', 'Mung Bean', 'Pigeon Pea', 'Rice', 'Urad Bean', 'Wheat']
+CLASS_NAMES = ['Apple', 'Corn', 'Cucumber', 'Peach', 'Tomato']
 
 def preprocess_image(image_bytes):
     image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
